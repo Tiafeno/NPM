@@ -1,0 +1,46 @@
+[
+  {
+    "_id": 1,
+    "name": {
+      "fr": "Accueil",
+      "eng": "Home"
+    },
+    "link" : {
+      "fr": "/",
+      "eng": "/"
+    }
+  },
+  {
+    "_id": 2,
+    "name": {
+      "fr": "Produits",
+      "eng": "Products"
+    },
+    "link" : {
+      "fr": "produits-naturel-de-madagascar/nos-produits.html",
+      "eng": "natural-product-of-madagascar/our-products.html"
+    }
+  },
+  {
+    "_id": 3,
+    "name": {
+      "fr": "Nos Actions",
+      "eng": "Ours Action"
+    },
+    "link" : {
+      "fr": "/nos-actions",
+      "eng": "/your-action"
+    }
+  },
+  {
+    "_id": 4,
+    "name": {
+      "fr": "Contact",
+      "eng": "Contact"
+    },
+    "link" : {
+      "fr": "/contact",
+      "eng": "/contact"
+    }
+  }
+]

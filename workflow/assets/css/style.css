@@ -1,0 +1,50 @@
+
+p{
+    font-family: 'Roboto', sans-serif; !important;
+}
+.header-nav-top {
+    background-color: beige;
+    border-bottom: 4px solid #3a3a3c;
+}
+
+.header-nav-down nav.uk-navbar-transparent{
+    background: #8ac543;
+    box-shadow: inset 0px -12px 70px -34px rgba(0,0,0,0.85);
+    -webkit-box-shadow: inset 0px -12px 70px -34px rgba(0,0,0,0.85);
+    -moz-box-shadow: inset 0px -12px 70px -34px rgba(0,0,0,0.85);
+    -o-box-shadow: inset 0px -12px 70px -34px rgba(0,0,0,0.85);
+}
+
+.header-nav-down  ul.primary-nav li > a{
+    color: #fff;
+    height: 60px;
+    font-weight: 600;
+    transition: all 0.5s linear;
+    -o-transition: all 0.5s linear;
+    -moz-transition: all 0.5s linear;
+    -webkit-transition: all 0.5s linear;
+}
+
+.uk-navbar-left  ul.primary-nav li > a:hover, nav li.uk-active a{
+    background: #36b34c;
+    color: aliceblue !important;
+    transition: all 0.5s linear;
+    -o-transition: all 0.5s linear;
+    -moz-transition: all 0.5s linear;
+    -webkit-transition: all 0.5s linear;
+    box-shadow: inset 0px 43px 117px -55px rgba(0,0,0,0.85);
+    text-shadow: 0px 0px 2px;
+}
+
+#offcanvas-usage > .uk-offcanvas-bar .uk-card-secondary{
+    box-shadow: none;
+}
+
+.uk-offcanvas-content a.uk-navbar-toggle {
+    color: #fff4f4 !important;
+}
+
+nav .uk-navbar-right ul.uk-navbar-nav li > a.uk-icon-button{
+    height: 36px;
+    margin-right: 10px;
+}
