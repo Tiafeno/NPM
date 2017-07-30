@@ -2,5 +2,5 @@
     Allow from all
 </IfModule>
 <IfModule !authz_core_module>
-    Allo from all
+    Allow from all
 </IfModule>

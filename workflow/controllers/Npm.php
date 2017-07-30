@@ -6,6 +6,7 @@ define('APPFOLDER', 'workflow');
 include_once APPFOLDER.'/libraries/lodash-php/src/lodash.php';
 include_once APPFOLDER.'/services/ErrorService.php';
 include_once APPFOLDER.'/services/HeaderService.php';
+include_once APPFOLDER.'/services/ProductServices.php';
 
 
 class npm extends CI_Controller {
@@ -18,15 +19,15 @@ class npm extends CI_Controller {
 	public $Menus = [];
 	private $TemplateData = array(); //Variable for Template
 
-  private function setServiceScripts($other = []){
+  private function setServiceScripts( $other = [] ){
     if (!in_array('scripts', array_keys($this->TemplateData), true)):
-      $this->TemplateData['scripts'] = $scripts =  HeaderService::getScript([ $other ]);
+      $this->TemplateData[ 'scripts' ] = $scripts =  HeaderService::getScript([ $other ]);
     return $scripts;
     endif;
   }
 
 	private function getHead(){
-    if (in_array('scripts', array_keys($this->TemplateData), true)):
+    if (in_array('scripts', array_keys( $this->TemplateData ), true)):
       //Global Scripts
       $scripts = array_replace_recursive(HeaderService::getScript([
           /*[
@@ -39,17 +40,17 @@ class npm extends CI_Controller {
             'link' => APPFOLDER.'/assets/slider/engine/script.js',
             'dependance' => 'wowslider-js'
           ] */
-        ]), $this->TemplateData['scripts']
+        ]), $this->TemplateData[ 'scripts' ]
       );
-      $this->TemplateData['scripts'] =& $scripts;
+      $this->TemplateData[ 'scripts' ] =& $scripts;
     else:
       // Default global Scripts
-      $this->TemplateData['scripts'] = HeaderService::getScript([ ]);
+      $this->TemplateData[ 'scripts' ] = HeaderService::getScript([ ]);
     endif;
 
 		$this->load->view('head', $this->TemplateData = array_merge($this->TemplateData, array(
 			'Langs' => $this->HeaderService->Langs,
-      'Currentlang' => trim($this->session->Currentlang),
+      'Currentlang' => trim( $this->session->Currentlang ),
 			'stylesheet' => HeaderService::getStyle()
 		)));
     $this->getHeader();
@@ -65,8 +66,8 @@ class npm extends CI_Controller {
 
 	private function getRouteModel(){
 		$MenuJson = $this->HeaderService->getMenu();
-		$objMenu = json_decode($MenuJson);
-    if (is_array($objMenu)) $this->Menus =& $objMenu;
+		$objMenu = json_decode( $MenuJson );
+    if (is_array( $objMenu )) $this->Menus =& $objMenu;
 	}
 
 	private function getFooter(){
@@ -80,15 +81,15 @@ class npm extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
-		$this->load->library('session');
-		$this->load->helper('language');
-		$this->load->helper('url');
+		$this->load->library( 'session' );
+		$this->load->helper( 'language' );
+		$this->load->helper( 'url' );
 
 		$this->HeaderService = new HeaderService();
     $this->ErrorService = new ErrorService();
 
 		if ($this->session->Currentlang == '' || $this->session->Currentload == ''){
-			$this->session->set_userdata($this->DefaultLang);
+			$this->session->set_userdata( $this->DefaultLang );
 		}
 	}
 
@@ -97,12 +98,12 @@ class npm extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->lang->load($this->session->Currentlang, $this->session->Currentload);
+		$this->lang->load( $this->session->Currentlang, $this->session->Currentload );
 		$this->TemplateData = array(
-			'title' => $this->lang->line('title'),
-      'description' => $this->lang->line('description'),
+			'title' => $this->lang->line( 'title' ),
+      'description' => $this->lang->line( 'description' ),
 			'ID' => 1, //ID Menu
-      'the_content' => $this->lang->line('home_content'),
+      'the_content' => $this->lang->line( 'home_content' ),
       // 'scripts' => $this->setServiceScripts([
       //   'name' => 'carousel',
       //   'link' => APPFOLDER.'/assets/js/carousel.js',
@@ -127,29 +128,30 @@ EOD
 	 */
 	public function translate(){
 		$inputLang = null;
-		if (!empty($this->input->get('lang'))) :
-			$inputLang = trim($this->input->get('lang'));
+		if (!empty($this->input->get( 'lang' ))) :
+			$inputLang = trim( $this->input->get( 'lang' ) );
 		endif;
 
-		if (is_null($inputLang)) return false;
+		if (is_null( $inputLang )) return false;
 		if ($this->session->Currentlang != $inputLang){
 			foreach ($this->HeaderService->Langs as $lang) {
 				# code...
-				if ($lang['lang'] != trim($inputLang)) continue;
-				$this->session->set_userdata('Currentlang', $lang['lang']);
-				$this->session->set_userdata('Currentload', $lang['load']);
+				if ($lang[ 'lang' ] != trim( $inputLang )) continue;
+				$this->session->set_userdata('Currentlang', $lang[ 'lang' ]);
+				$this->session->set_userdata('Currentload', $lang[ 'load' ]);
 				break;
 			}
 		}
-		if (!empty( $this->input->get('redirect') ) || (boolean)$this->input->get('redirect') === true)
+		if (!empty( $this->input->get( 'redirect' ) ) || (boolean)$this->input->get( 'redirect' ) === true)
 			redirect(site_url(), 'location', 301);
 	}
 
 	public function produits_page(){
 		$this->getFactory();
 		$this->TemplateData = [
-			'title' => $this->lang->line('title'),
-      'description' => $this->lang->line('description'),
+			'title' => $this->lang->line( 'title' ),
+      'description' => $this->lang->line( 'description' ),
+			'productservices' => new ProductServices(),
 			'ID' => 2 //ID Menu
 		];
 
@@ -161,7 +163,7 @@ EOD
   public function Error404(){
     $this->getFactory();
     $this->TemplateData = [
-      'title' => $this->lang->line('title'),
+      'title' => $this->lang->line( 'title' ),
       'description' => "Error 404",
       'ID' => 0
     ];
@@ -172,23 +174,23 @@ EOD
   }
 
 	protected function translateForthis(){
-		$lang = $this->DefaultLang['Currentlang'];
+		$lang = $this->DefaultLang[ 'Currentlang' ];
 		if ($this->session->Currentlang != $lang){
 			foreach ($this->HeaderService->Langs as $__lg) {
 				# code...
-				if($__lg['lang'] != trim($lang)) continue;
-				$this->session->set_userdata('Currentlang', $__lg['lang']);
-				$this->session->set_userdata('Currentload', $__lg['load']);
+				if($__lg[ 'lang' ] != trim( $lang )) continue;
+				$this->session->set_userdata('Currentlang', $__lg[ 'lang' ]);
+				$this->session->set_userdata('Currentload', $__lg[ 'load' ]);
 				break;
 			}
 		}
 	}
 
 	protected function getFactory(){
-		if ($this->session->Currentlang != $this->DefaultLang['Currentlang']){
+		if ($this->session->Currentlang != $this->DefaultLang[ 'Currentlang' ]){
 			$this->translateForthis();
 		}
-		$this->lang->load($this->session->Currentlang, $this->session->Currentload);
+		$this->lang->load( $this->session->Currentlang, $this->session->Currentload );
 	}
 
 }

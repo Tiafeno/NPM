@@ -1,9 +1,9 @@
 <?php
 $lang['title'] = "Produits Naturel de Madagascar";
-$lang['description'] = <<<EOD
+$lang['description'] = <<< EOD
 EOD;
 $lang['menu'] = "Menu";
-$lang['home_content'] = <<<EOD
+$lang['home_content'] = <<< EOD
 Bienvenue dans le monde 100% naturels ! <br>
 Natural Products of Madagascar (NPM) est une grande société 
 agroalimentaire malgache dont les activités sont la production, 
@@ -14,4 +14,10 @@ sites de production, zones de collecte et lieux de transformation, la société 
 capacité de recevoir une grande quantité de commande auprès des clients.
 EOD;
 
+$lang['title_1024'] = 'Girofle';
 
+$lang['description_1024'] = <<< DESC
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+DESC
+;

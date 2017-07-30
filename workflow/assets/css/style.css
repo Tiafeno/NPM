@@ -7,7 +7,7 @@ p{
     border-bottom: 4px solid #3a3a3c;
 }
 
-.header-nav-down nav.uk-navbar-transparent{
+header#sticky{
     background: #8ac543;
     box-shadow: inset 0px -12px 70px -34px rgba(0,0,0,0.85);
     -webkit-box-shadow: inset 0px -12px 70px -34px rgba(0,0,0,0.85);

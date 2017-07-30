@@ -4,8 +4,9 @@
 (function($){
   $(document).ready(function(){
     var stickys = UIkit.sticky('#sticky', {
-      
+      animation : 'uk-animation-slide-top'
     });
-  })
+
+  });
    
 })(jQuery);
