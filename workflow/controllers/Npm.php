@@ -96,8 +96,7 @@ class npm extends CI_Controller {
 	/***
 	 ** @Route /
 	 */
-	public function index()
-	{
+	public function index() {
 		$this->lang->load( $this->session->Currentlang, $this->session->Currentload );
 		$this->TemplateData = array(
 			'title' => $this->lang->line( 'title' ),
@@ -109,7 +108,6 @@ class npm extends CI_Controller {
       //   'link' => APPFOLDER.'/assets/js/carousel.js',
       //   'dependance' => null
       // ]),
-
       'customCSS' => <<<EOD
         /* CSS code here... */
         
@@ -126,7 +124,7 @@ EOD
 	 ** @Route /translate
 	 ** @Params: lang (string) eng | fr
 	 */
-	public function translate(){
+	public function translate() {
 		$inputLang = null;
 		if (!empty($this->input->get( 'lang' ))) :
 			$inputLang = trim( $this->input->get( 'lang' ) );
@@ -157,8 +155,8 @@ EOD
 			
 	}
 
-	public function produits_page(){
-		$this->getFactory();
+	public function produits_page() {
+		$this->lang->load( $this->session->Currentlang, $this->session->Currentload );
 		$ProductStruct = [
 			[ 'pos' => 1, 'title' => $this->lang->line( 'product_t1' ), 'hook' => 'epa'],
 			[ 'pos' => 2, 'title' => $this->lang->line( 'product_t2' ), 'hook' => 'fel'],
@@ -178,9 +176,8 @@ EOD
 		$this->getFooter();
 	}
 
-	public function contact_page(){
-		$this->getFactory();
-
+	public function contact_page() {
+		$this->lang->load( $this->session->Currentlang, $this->session->Currentload );
 		$this->TemplateData = [
 			'title' => $this->lang->line( 'contact_title' ),
 			'description' => $this->lang->line( 'contact_desc' ),
@@ -193,7 +190,7 @@ EOD
 	}
   
   public function Error404(){
-    $this->getFactory();
+    $this->lang->load( $this->session->Currentlang, $this->session->Currentload );
     $this->TemplateData = [
       'title' => '404 Errno!',
       'description' => "Error 404",
@@ -218,11 +215,5 @@ EOD
 		}
 	}
 
-	protected function getFactory(){
-		if ($this->session->Currentlang != $this->DefaultLang[ 'Currentlang' ]){
-			$this->translateForthis();
-		}
-		$this->lang->load( $this->session->Currentlang, $this->session->Currentload );
-	}
 
 }
