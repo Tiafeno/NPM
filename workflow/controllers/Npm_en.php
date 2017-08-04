@@ -27,5 +27,9 @@ class Npm_en extends Npm
     parent::produits_page();
   }
 
+  public function contact_page(){
+    parent::contact_page();
+  }
+
 
 }

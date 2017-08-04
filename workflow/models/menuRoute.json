@@ -17,19 +17,8 @@
       "eng": "Products"
     },
     "link" : {
-      "fr": "produits-naturel-de-madagascar/nos-produits.html",
-      "eng": "natural-product-of-madagascar/our-products.html"
-    }
-  },
-  {
-    "_id": 3,
-    "name": {
-      "fr": "Nos Actions",
-      "eng": "Ours Action"
-    },
-    "link" : {
-      "fr": "/nos-actions",
-      "eng": "/your-action"
+      "fr": "nos-produits.html",
+      "eng": "our-products.html"
     }
   },
   {
@@ -39,8 +28,8 @@
       "eng": "Contact"
     },
     "link" : {
-      "fr": "/contact",
-      "eng": "/contact"
+      "fr": "contact.html",
+      "eng": "contact.html"
     }
   }
 ]

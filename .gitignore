@@ -1,6 +1,7 @@
 .DS_Store
 
 workflow/cache/*
+workflow/images/*
 !workflow/cache/index.html
 !workflow/cache/.htaccess
 

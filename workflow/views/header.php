@@ -87,8 +87,9 @@ $NPM =& get_instance();
           <ul class="uk-navbar-nav">
             <?php foreach ($Langs as $lang): 
                     if ($lang['lang'] === $Currentlang): continue; endif;
+                    $current_url = current_url();
             ?>
-              <li><a href="<?= base_url("/multilingue/translate?lang={$lang['lang']}&redirect=true") ?>" class="uk-icon-button"><b><?= strtoupper($lang['lang']) ?></b></a></li>
+              <li><a href="<?= base_url("/multilingue/translate?lang={$lang['lang']}&redirect=true&_idmenu={$ID}") ?>" class="uk-icon-button"><b><?= strtoupper($lang['lang']) ?></b></a></li>
             <?php endforeach; ?>
           </ul>
         </div>

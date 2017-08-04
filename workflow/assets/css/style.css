@@ -1,7 +1,8 @@
 
-p{
-    font-family: 'Roboto', sans-serif; !important;
+html, h1, .uk-h1, h2, .uk-h2, h3, .uk-h3, h4, .uk-h4, h5, .uk-h5, h6, .uk-h6, a{
+    font-family: 'PT Sans', sans-serif !important;
 }
+
 .header-nav-top {
     background-color: beige;
     border-bottom: 4px solid #3a3a3c;
@@ -9,10 +10,10 @@ p{
 
 header#sticky{
     background: #8ac543;
-    box-shadow: inset 0px -12px 70px -34px rgba(0,0,0,0.85);
+    /* box-shadow: inset 0px -12px 70px -34px rgba(0,0,0,0.85);
     -webkit-box-shadow: inset 0px -12px 70px -34px rgba(0,0,0,0.85);
     -moz-box-shadow: inset 0px -12px 70px -34px rgba(0,0,0,0.85);
-    -o-box-shadow: inset 0px -12px 70px -34px rgba(0,0,0,0.85);
+    -o-box-shadow: inset 0px -12px 70px -34px rgba(0,0,0,0.85); */
 }
 
 .header-nav-down  ul.primary-nav li > a{
@@ -33,7 +34,6 @@ header#sticky{
     -moz-transition: all 0.5s linear;
     -webkit-transition: all 0.5s linear;
     box-shadow: inset 0px 43px 117px -55px rgba(0,0,0,0.85);
-    text-shadow: 0px 0px 2px;
 }
 
 #offcanvas-usage > .uk-offcanvas-bar .uk-card-secondary{

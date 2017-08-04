@@ -142,15 +142,33 @@ EOD
 				break;
 			}
 		}
-		if (!empty( $this->input->get( 'redirect' ) ) || (boolean)$this->input->get( 'redirect' ) === true)
-			redirect(site_url(), 'location', 301);
+		if (!empty( $this->input->get( 'redirect' ) ) || (boolean)$this->input->get( 'redirect' ) === true){
+			$this->getRouteModel();
+			$_idMenu = (int)$this->input->get( '_idmenu' );
+			if (!empty( $_idMenu ) && is_int( $_idMenu )){
+				while (list(, $objMenu) = each($this->Menus)){
+					if ($objMenu->_id === $_idMenu){
+						redirect(site_url($objMenu->link->{$this->session->Currentlang}), 'location', 301);
+						break;
+					}
+				}
+			} else redirect(site_url(), 'location', 301);
+		}
+			
 	}
 
 	public function produits_page(){
 		$this->getFactory();
+		$ProductStruct = [
+			[ 'pos' => 1, 'title' => $this->lang->line( 'product_t1' ), 'hook' => 'epa'],
+			[ 'pos' => 2, 'title' => $this->lang->line( 'product_t2' ), 'hook' => 'fel'],
+			[ 'pos' => 3, 'title' => $this->lang->line( 'product_t3' ), 'hook' => 'he'],
+			[ 'pos' => 4, 'title' => $this->lang->line( 'product_t4' ), 'hook' => 'gs']
+		];
 		$this->TemplateData = [
 			'title' => $this->lang->line( 'title' ),
       'description' => $this->lang->line( 'description' ),
+			'productstruct' => (object)$ProductStruct,
 			'productservices' => new ProductServices(),
 			'ID' => 2 //ID Menu
 		];
@@ -159,11 +177,25 @@ EOD
 		$this->load->view('products/products', $this->TemplateData);
 		$this->getFooter();
 	}
+
+	public function contact_page(){
+		$this->getFactory();
+
+		$this->TemplateData = [
+			'title' => $this->lang->line( 'contact_title' ),
+			'description' => $this->lang->line( 'contact_desc' ),
+			'adress' => $this->lang->line( 'adress' ),
+			'ID' => 4
+		];
+		$this->getHead();
+		$this->load->view('contact/contact', $this->TemplateData);
+		$this->getFooter();
+	}
   
   public function Error404(){
     $this->getFactory();
     $this->TemplateData = [
-      'title' => $this->lang->line( 'title' ),
+      'title' => '404 Errno!',
       'description' => "Error 404",
       'ID' => 0
     ];

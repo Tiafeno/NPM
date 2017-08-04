@@ -7,12 +7,6 @@
  */
 
 class ProductServices{
-  public $struct = [
-    [ 'pos' => 1, 'title' => 'Épices et produits aromatiques'],
-    [ 'pos' => 2, 'title' => 'Fruits et légumes'],
-    [ 'pos' => 3, 'title' => 'Huiles Essentielles'],
-    [ 'pos' => 4, 'title' => 'Grains Secs']
-  ];
   public $pictures = [];
   private $allowed = ['gif', 'jpg', 'png', 'jpeg'];
   public function __construct(){}

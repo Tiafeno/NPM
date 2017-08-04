@@ -27,7 +27,8 @@
   <meta name="description" content="<?= $description ?>" />
   <title><?= $title ?></title>
   <link rel="icon" href="favicon.ico"/>
-  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+  <!-- <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet"> -->
+  <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700" rel="stylesheet">
   <?php foreach ($stylesheet as $link): ?>
     <link rel="stylesheet" href="<?= base_url() . $link ?>">
   <?php endforeach; ?>
