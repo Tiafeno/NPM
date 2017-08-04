@@ -28,8 +28,8 @@
       "eng": "Contact"
     },
     "link" : {
-      "fr": "contact.html",
-      "eng": "contact.html"
+      "fr": "fr/contact.html",
+      "eng": "eng/contact.html"
     }
   }
 ]
