@@ -214,6 +214,13 @@ EOD
 			}
 		}
 	}
+	
+	public function getFactory(){
+		if ($this->session->Currentlang != $this->DefaultLang[ 'Currentlang' ]){
+			$this->translateForthis();
+		}
+		$this->lang->load( $this->session->Currentlang, $this->session->Currentload );
+	}
 
 
 }

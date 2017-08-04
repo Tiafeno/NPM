@@ -1,6 +1,10 @@
 <?php
 $lang['title'] = "Natural products of Madagascar";
 $lang['description'] = <<<EOD
+Natural Products of Madagascar (NPM) is a large malagasy agri-food 
+company whose activities are the production, collection, processing, 
+sale and export of natural products of vegetable origin, while respecting 
+traceability and quality standards required by local and international markets.
 EOD;
 $lang['menu'] = "Menu";
 
