@@ -52,8 +52,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'npm';
 $route['404_override'] = 'npm/Error404';
 $route['translate_uri_dashes'] = FALSE;
+
 $route['nos-produits.html'] = 'npm/produits_page';
 $route['our-products.html'] = 'npm_en/products_page';
+
+$route['nos-actions.html'] = 'npm/ours_actions_page';
+$route['ours-actions.html'] = 'npm_en/ours_actions_page';
+
 $route['fr/contact.html'] = 'npm/contact_page';
 $route['eng/contact.html'] = 'npm_en/contact_page';
+
 $route['multilingue/translate'] = 'npm/translate';

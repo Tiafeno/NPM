@@ -22,6 +22,17 @@
     }
   },
   {
+    "_id": 3,
+    "name": {
+      "fr": "Nos actions",
+      "eng": "Ours actions"
+    },
+    "link" : {
+      "fr": "nos-actions.html",
+      "eng": "ours-actions.html"
+    }
+  },
+  {
     "_id": 4,
     "name": {
       "fr": "Contact",

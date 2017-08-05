@@ -11,12 +11,12 @@
 <div class="uk-section uk-section-default uk-section-large " style="padding-top: 50px;"> <!-- uk-padding-remove-top -->
 
   <div class="uk-container uk-container-small">
-    <div class="uk-grid">
-      <div class="uk-width-1-1@m">
-        <div class="uk-card navbar-card-slogan uk-width-1-4@m" style="margin: auto;">
-          <img src="<?= base_url($appFolder . '/assets/img/logo_monochrome.png') ?>" />
-        </div>
-        <p style=" text-align: center; word-spacing: 2.5px; letter-spacing: 2.2px; padding-top: 10px" >
+    <div uk-grid>
+      <div class="uk-width-1-2@m" >
+        <img class="uk-border-rounded" src="<?= base_url($appFolder . '/assets/img/products-home-page.jpg') ?>" />
+      </div>
+      <div class="uk-width-1-2@m">
+        <p class="uk-text-middle" style=" text-align: justify; word-spacing: 2.5px; letter-spacing: 2.2px" >
           <?= $the_content ?>
         </p>
       </div>

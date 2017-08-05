@@ -120,39 +120,16 @@ EOD
 		$this->getFooter();
 	}
 
-	/***
-	 ** @Route /translate
-	 ** @Params: lang (string) eng | fr
-	 */
-	public function translate() {
-		$inputLang = null;
-		if (!empty($this->input->get( 'lang' ))) :
-			$inputLang = trim( $this->input->get( 'lang' ) );
-		endif;
-
-		if (is_null( $inputLang )) return false;
-		if ($this->session->Currentlang != $inputLang){
-			foreach ($this->HeaderService->Langs as $lang) {
-				# code...
-				if ($lang[ 'lang' ] != trim( $inputLang )) continue;
-				$this->session->set_userdata('Currentlang', $lang[ 'lang' ]);
-				$this->session->set_userdata('Currentload', $lang[ 'load' ]);
-				break;
-			}
-		}
-		if (!empty( $this->input->get( 'redirect' ) ) || (boolean)$this->input->get( 'redirect' ) === true){
-			$this->getRouteModel();
-			$_idMenu = (int)$this->input->get( '_idmenu' );
-			if (!empty( $_idMenu ) && is_int( $_idMenu )){
-				while (list(, $objMenu) = each($this->Menus)){
-					if ($objMenu->_id === $_idMenu){
-						redirect(site_url($objMenu->link->{$this->session->Currentlang}), 'location', 301);
-						break;
-					}
-				}
-			} else redirect(site_url(), 'location', 301);
-		}
-			
+	public function ours_actions_page() {
+		$this->lang->load( $this->session->Currentlang, $this->session->Currentload );
+		$this->TemplateData = [
+			'title' => 'Actions - '.$this->__e('title'),
+			'description' => $this->__e('description'),
+			'ID' => 3
+		]; 
+		$this->getHead();
+		$this->load->view('actions/action', $this->TemplateData);
+		$this->getFooter();
 	}
 
 	public function produits_page() {
@@ -201,6 +178,41 @@ EOD
     $this->load->view('errors/html/error_404', $this->TemplateData);
     $this->getFooter();
   }
+
+	/***
+	 ** @Route /translate
+	 ** @Params: lang (string) eng | fr
+	 */
+	public function translate() {
+		$inputLang = null;
+		if (!empty($this->input->get( 'lang' ))) :
+			$inputLang = trim( $this->input->get( 'lang' ) );
+		endif;
+
+		if (is_null( $inputLang )) return false;
+		if ($this->session->Currentlang != $inputLang){
+			foreach ($this->HeaderService->Langs as $lang) {
+				# code...
+				if ($lang[ 'lang' ] != trim( $inputLang )) continue;
+				$this->session->set_userdata('Currentlang', $lang[ 'lang' ]);
+				$this->session->set_userdata('Currentload', $lang[ 'load' ]);
+				break;
+			}
+		}
+		if (!empty( $this->input->get( 'redirect' ) ) || (boolean)$this->input->get( 'redirect' ) === true){
+			$this->getRouteModel();
+			$_idMenu = (int)$this->input->get( '_idmenu' );
+			if (!empty( $_idMenu ) && is_int( $_idMenu )){
+				while (list(, $objMenu) = each($this->Menus)){
+					if ($objMenu->_id === $_idMenu){
+						redirect(site_url($objMenu->link->{$this->session->Currentlang}), 'location', 301);
+						break;
+					}
+				}
+			} else redirect(site_url(), 'location', 301);
+		}
+			
+	}
 
 	protected function translateForthis(){
 		$lang = $this->DefaultLang[ 'Currentlang' ];

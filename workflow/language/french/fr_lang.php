@@ -64,8 +64,8 @@ $lang['title_37'] = 'Riz';
 $lang['title_38'] = 'Soja';
 
 $lang['adress'] = <<< ADR
-<b>NATURAL PRODUCT OF MADAGASCAR</b>, <br>
-205 Andapa, Antangena - Madagascar <br>
+<b>NATURAL PRODUCTS OF MADAGASCAR</b>, <br>
+Antangena - 205 Andapa - Madagascar <br>
 Région SAVA
 ADR
 ;
