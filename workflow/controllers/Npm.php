@@ -156,7 +156,7 @@ EOD
 	public function contact_page() {
 		$this->lang->load( $this->session->Currentlang, $this->session->Currentload );
 		$this->TemplateData = [
-			'title' => $this->lang->line( 'contact_title' ),
+			'title' => 'Contact - '.$this->__e('title'),
 			'description' => $this->lang->line( 'contact_desc' ),
 			'adress' => $this->lang->line( 'adress' ),
 			'ID' => 4
