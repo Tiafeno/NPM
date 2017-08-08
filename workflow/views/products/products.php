@@ -79,7 +79,7 @@ $factory = $productservices->factory();
                   <div class="uk-card-media-top"  uk-lightbox="animation: scale">
                     <a class="uk-align-center" href="<?= base_url($appFolder . '/images/'.$pos.'/'.$id.'.jpg') ?>" title="<?= $this->lang->line('title_'.$id) ?>">
                       <img src="<?= base_url($appFolder . '/images/'.$pos.'/thumb_'.$id.'.jpg') ?>" alt="" class="uk-align-center" >
-                      <a class="uk-position-absolute uk-transform-center" style="left: 50%; top: 40%" href="<?= base_url($appFolder . '/images/'.$pos.'/'.$id.'.jpg') ?>" uk-marker></a>
+                      <a class="uk-position-absolute uk-transform-center" style="left: 50%; top: 40%" href="<?= base_url($appFolder . '/images/'.$pos.'/'.$id.'.jpg') ?>" title="<?= $this->lang->line('title_'.$id) ?>" uk-marker></a>
                     </a>
                   </div>
                   <div class="uk-card-body">
