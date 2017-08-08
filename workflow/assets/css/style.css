@@ -40,6 +40,11 @@ header#sticky{
     box-shadow: none;
 }
 
+#offcanvas-usage > .uk-offcanvas-bar ul.uk-nav > li{
+    display: inline-block;
+    width: 100%;
+}
+
 .uk-offcanvas-content a.uk-navbar-toggle {
     color: #fff4f4 !important;
 }

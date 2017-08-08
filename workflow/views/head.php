@@ -6,6 +6,15 @@
  * Time: 21:00
  */
 ?>
+<!-- 
+***
+*** @Author : TIAFENO Finel
+*** @eMail: tiafenofnel@gmail.com
+*** @Function: Developper Web & Project Manager
+*** @WebSite: http://www.falicrea.com
+*** @GitHub: http://github.com/Tiafeno
+***
+-->
 
 <!DOCTYPE html>
 <?php foreach ($Langs as $Lang):
@@ -21,7 +30,7 @@
   huile végétale, Calophyllum inophyllum, Centelle asiatica, huiles pures, huiles naturelles, agriculture biologique, 
   certification ECOCERT, traçabilité, analyse CPG, Université RUTGERS, SARO, molécules, a-pinène, travaux de laboratoire, 
   antivirales, anti-inflamatoire, vanilloïdes, plante, le CIRAD, Centre National pour la Recherche Environnementale, traitement du cancer,
-   océan indien, shasama," />
+   océan indien" />
   
   <meta name="author" content="TIAFENO Finel" />
   <meta name="description" content="<?= $description ?>" />

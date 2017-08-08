@@ -202,7 +202,7 @@ EOD
 		if (!empty( $this->input->get( 'redirect' ) ) || (boolean)$this->input->get( 'redirect' ) === true){
 			$this->getRouteModel();
 			$_idMenu = (int)$this->input->get( '_idmenu' );
-			if (!empty( $_idMenu ) && is_int( $_idMenu )){
+			if ( $_idMenu != 0 || (!empty( $_idMenu ) && is_int( $_idMenu )) ){
 				while (list(, $objMenu) = each($this->Menus)){
 					if ($objMenu->_id === $_idMenu){
 						redirect(site_url($objMenu->link->{$this->session->Currentlang}), 'location', 301);

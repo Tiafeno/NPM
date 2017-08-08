@@ -6,17 +6,16 @@
  * Time: 21:57
  */
 
-$NPM =& get_instance();
 ?>
 
 <header class="header-nav">
   <header class="header-nav-top">
     <div class="uk-container uk-container-small">
       <div class="uk-text-left" uk-grid>
-        <div class="uk-width-1-3">
+        <div class="uk-width-1-3@m">
           <div class="uk-card uk-card-body navbar-card-slogan">
-            <a href="<?= base_url('/') ?>" alt="logo natural product of madagascar">
-              <img src="<?= base_url($appFolder . '/assets/img/logo.png') ?>" />
+            <a href="<?= base_url('/') ?>" class="uk-text-center uk-inline" style="display:block" alt="logo natural product of madagascar">
+              <img class="uk-width-medium" src="<?= base_url($appFolder . '/assets/img/logo.png') ?>" />
             </a>
           </div>
         </div>
@@ -61,7 +60,7 @@ $NPM =& get_instance();
             <div id="offcanvas-usage" uk-offcanvas>
               <div class="uk-offcanvas-bar">
                 <button class="uk-offcanvas-close" type="button" uk-close></button>
-                <h3><?= $NPM->__e('menu') ?></h3>
+                <h3><?= $this->lang->line('menu') ?></h3>
                 <div class="uk-card uk-card-secondary">
                   <div class="uk-card-body">
                     <ul class="uk-nav uk-nav-default">
