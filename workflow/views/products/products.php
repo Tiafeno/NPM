@@ -57,7 +57,7 @@ $factory = $productservices->factory();
         ?>  
       </ul>
     </div>
-  <?php while (list($pos, $idDir) = each($factory)): ?>
+  <?php while (list($pos, $idDir) = each ( $factory )): ?>
     <div class="uk-section">
       <div class="uk-container uk-container-small">
       <?php foreach ($productstruct as $struct) { 
@@ -73,17 +73,20 @@ $factory = $productservices->factory();
       <div class="uk-child-width-1-4@m uk-grid-match" uk-grid>
       <?php foreach ($idDir as $idPath){ 
               $id = (int)pathinfo($idPath, PATHINFO_FILENAME);
+              $title = $this->lang->line( 'title_'.$id );
+              $img_url = $appFolder . '/images/'.$pos.'/'.$id.'.jpg';
+              $img_thumb_url = $appFolder . '/images/'.$pos.'/thumb_'.$id.'.jpg';
       ?>
               <div>
                 <div class="uk-card uk-card-default uk-card-hover card-product">
                   <div class="uk-card-media-top"  uk-lightbox="animation: scale">
-                    <a class="uk-align-center" href="<?= base_url($appFolder . '/images/'.$pos.'/'.$id.'.jpg') ?>" title="<?= $this->lang->line('title_'.$id) ?>">
-                      <img src="<?= base_url($appFolder . '/images/'.$pos.'/thumb_'.$id.'.jpg') ?>" alt="" class="uk-align-center" >
-                      <a class="uk-position-absolute uk-transform-center" style="left: 50%; top: 40%" href="<?= base_url($appFolder . '/images/'.$pos.'/'.$id.'.jpg') ?>" title="<?= $this->lang->line('title_'.$id) ?>" uk-marker></a>
+                    <a class="uk-align-center" href="<?= base_url( $img_url ) ?>" title="<?= $title ?>">
+                      <img src="<?= base_url( $img_thumb_url ) ?>" alt="" class="uk-align-center" >
+                      <a class="uk-position-absolute uk-transform-center" style="left: 50%; top: 40%" href="<?= base_url( $img_url ) ?>" title="<?= $title ?>" uk-marker></a>
                     </a>
                   </div>
                   <div class="uk-card-body">
-                    <h3 class="uk-label uk-label-success uk-position-bottom-center"><?= $this->lang->line('title_'.$id) ?></h3>
+                    <h3 class="uk-label uk-label-success uk-position-bottom-center"><?= $title ?></h3>
                   </div>
                 </div>
               </div>
