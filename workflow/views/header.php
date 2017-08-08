@@ -7,6 +7,13 @@
  */
 
 ?>
+<div class="scroll-arrow-up uk-position-fixed uk-position-bottom-right uk-iconnav uk-iconnav-vertical" 
+style="top:90%; right:1%; display: none; z-index: 80"> 
+  <li>
+    <span data-href="#body" class="uk-icon-button" title="Go Up" 
+    style="display: inline-flex" uk-icon="icon: arrow-up; ratio: 2" uk-tooltip="pos: left"></a>
+  </li> 
+</div>
 
 <header class="header-nav">
   <header class="header-nav-top">

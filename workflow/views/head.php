@@ -74,4 +74,4 @@
     <script src="<?= $link ?>"></script>
   <?php endforeach; ?>
 </head>
-<body>
+<body id="body">

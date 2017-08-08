@@ -28,18 +28,18 @@ $factory = $productservices->factory();
     display: inline-block;
     padding-left: 20px;
   }
-  ul.list-hook > li > a{
+  ul.list-hook > li > span{
     padding-top: 20px;
     padding-bottom: 20px;
     display: block;
     color:#fff
   }
-  ul.list-hook > li:nth-child(n+2) a{
+  ul.list-hook > li:nth-child(n+2) span{
     border-left : 1.5px dotted #fff;
     padding-left: 16px;
   }
   @media(max-width: 808px){
-    ul.list-hook > li:nth-child(n+2) a{
+    ul.list-hook > li:nth-child(n+2) span{
       border: none;
     }
   }
@@ -52,7 +52,7 @@ $factory = $productservices->factory();
         <?php 
         foreach ($productstruct as $struct) { 
           $str = (object)$struct; 
-          printf('<li> <a href="#%s" class="scroll" id-target="%s"> %s </a> </li>', $str->hook, $str->hook, $str->title);
+          printf('<li> <span data-href="#%s" class="scroll" id-target="%s"> %s </span> </li>', $str->hook, $str->hook, $str->title);
         } 
         ?>  
       </ul>
